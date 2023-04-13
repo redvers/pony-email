@@ -1,0 +1,15 @@
+{
+  "packages": [
+    "email"
+  ],
+  "deps": [
+  ],
+  "info": {
+    "description": "Library to format EMail for sending",
+    "homepage": "https://github.com/redvers/pony-email/",
+    "license": "BSD-2-Clause",
+    "documentation_url": "https://redvers.github.io/pony-email",
+    "version": "0.0.0",
+    "name": "email"
+  }
+}
