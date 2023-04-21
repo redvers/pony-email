@@ -58,6 +58,7 @@ class EMail
     "--" + boundary' + "--\r\n"
 
   fun render_headers(): String =>
+    "From: " + from' + "\r\n" +
     "To: " + ", ".join(to'.keys()) + "\r\n" +
     "Cc: " + ", ".join(cc'.keys()) + "\r\n" +
     "Subject: " + subject' + "\r\n" +
