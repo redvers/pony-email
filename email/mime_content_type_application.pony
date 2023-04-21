@@ -1,8 +1,12 @@
 use "encode/base64"
 
-class MIMEContentTypeApplication is MIMEContentType
-  var texttype: String = "pdf"
+class val MIMEContentTypeApplication is MIMEContentType
+  var texttype: String val
   var filename: (None | String val) = None
+
+  new val create(texttype': String val = "binary", filename': (String val | None) = None) =>
+    texttype = texttype'
+    filename = filename'
 
   fun content_type(): String val =>
     "Content-Type: application/" + texttype + "\r\n"
@@ -13,6 +17,3 @@ class MIMEContentTypeApplication is MIMEContentType
     | let name: String val => return "Content-Disposition: attachment; filename=" + name + "\r\n"
     end
     ""
-
-  fun ref set_content_type(data: String val): None =>
-    texttype = data
