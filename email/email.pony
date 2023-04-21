@@ -32,7 +32,7 @@ class EMail
       a.update_u64(8, random.next())?   // no security reason
       a.update_u64(16, random.next())?  // for this to be highly
       a.update_u64(24, random.next())?  // random.
-      boundary' = Base64.encode_mime(a)
+      boundary' = Base64.encode_mime(a).>rstrip().clone()
     end
 
 

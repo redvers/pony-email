@@ -33,15 +33,14 @@ class \nodoc\ iso _TestHeaders is UnitTest
     h.assert_true((",".join(email.cc'.keys())) == "notreallyred@example.com,red@example.com")
 
     let headers: Array[String] = email.render_headers().split_by("\r\n")
-    h.assert_eq[USize](headers.size(), 9)
+    h.assert_eq[USize](headers.size(), 8)
     h.assert_eq[String](headers(0)?, "From: fromred@example.com")
     h.assert_eq[String](headers(1)?, "To: notreallyred@example.com, red@example.com")
     h.assert_eq[String](headers(2)?, "Cc: notreallyred@example.com, red@example.com")
     h.assert_eq[String](headers(3)?, "Subject: This is a random subject")
     h.assert_eq[String](headers(4)?.substring(0,46), "Content-Type: multipart/alternative; boundary=")
-    h.assert_eq[String](headers(5)?, "")
-    h.assert_eq[String](headers(6)?, "Mime-Version: 1.0")
-    h.assert_eq[String](headers(7)?, "")
+    h.assert_eq[String](headers(5)?, "Mime-Version: 1.0")
+    h.assert_eq[String](headers(6)?, "")
 
 
 class \nodoc\ iso _TestHTMLEmail is UnitTest
