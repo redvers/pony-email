@@ -53,9 +53,7 @@ class \nodoc\ iso _TestHTMLEmail is UnitTest
     .>from("fromred@example.com")
     .>subject("This is a text HTML Email")
     .>html_body("<h1>Hello World</h1>")
+    .>html_body("<h2>Hello World</h2>")
 
     h.env.out.print(email.render())
 
-    email.clear_bodies()
-
-    h.env.out.print(email.render())

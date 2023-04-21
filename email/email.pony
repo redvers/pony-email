@@ -66,8 +66,9 @@ class EMail
     "Mime-Version: 1.0\r\n\r\n"
 
   fun render_bodies(): String val =>
-    var bodies': String trn = recover trn "--" + boundary' + "\r\n" end
+    var bodies': String trn = recover trn String end
     for f in contents'.values() do
+      bodies'.append("--" + boundary' + "\r\n")
       bodies'.append(f.render())
     end
     consume bodies'
