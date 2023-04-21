@@ -16,9 +16,9 @@ class EMail
 
   var contents': Array[MIMEContent val] = []
   var boundary': String = "gaUn85W5WAw5dGugOB/roH9sGDVhTmkfgB2lTWAVC6"
-  var to': Map[String val, String val] val = Map[String val, String val]
-  var cc': Map[String val, String val] val = Map[String val, String val]
-  var bcc': Map[String val, String val] val = Map[String val, String val]
+  var to': Set[String val] val = Set[String val]
+  var cc': Set[String val] val = Set[String val]
+  var bcc': Set[String val] val = Set[String val]
   var subject': String val = ""
   var from': String val = ""
 
@@ -36,9 +36,9 @@ class EMail
     end
 
 
-  fun ref to(email: String val) => to' = to'.add(email, "")
-  fun ref cc(email: String val) => cc' = cc'.add(email, "")
-  fun ref bcc(email: String val) => bcc' = bcc'.add(email, "")
+  fun ref to(email: String val) => to' = to'.add(email)
+  fun ref cc(email: String val) => cc' = cc'.add(email)
+  fun ref bcc(email: String val) => bcc' = bcc'.add(email)
   fun ref from(f: String val) => from' = f
   fun ref subject(f: String val) => subject' = f
 
@@ -59,8 +59,8 @@ class EMail
 
   fun render_headers(): String =>
     "From: " + from' + "\r\n" +
-    "To: " + ", ".join(to'.keys()) + "\r\n" +
-    "Cc: " + ", ".join(cc'.keys()) + "\r\n" +
+    "To: " + ", ".join(to'.values()) + "\r\n" +
+    "Cc: " + ", ".join(cc'.values()) + "\r\n" +
     "Subject: " + subject' + "\r\n" +
     "Content-Type: multipart/alternative; boundary=" + boundary' + "\r\n" +
     "Mime-Version: 1.0\r\n\r\n"

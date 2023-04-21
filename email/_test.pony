@@ -17,10 +17,10 @@ class \nodoc\ iso _TestHeaders is UnitTest
     let email: EMail = EMail
     email.to("red@example.com")
     h.assert_true(true)
-    h.assert_true((",".join(email.to'.keys())) == "red@example.com")
+    h.assert_true((",".join(email.to'.values())) == "red@example.com")
 
     email.to("notreallyred@example.com")
-    h.assert_true((",".join(email.to'.keys())) == "notreallyred@example.com,red@example.com")
+    h.assert_true((",".join(email.to'.values())) == "notreallyred@example.com,red@example.com")
 
     email
     .>cc("red@example.com")
@@ -30,7 +30,7 @@ class \nodoc\ iso _TestHeaders is UnitTest
 
     h.env.out.print(email.render_headers())
 
-    h.assert_true((",".join(email.cc'.keys())) == "notreallyred@example.com,red@example.com")
+    h.assert_true((",".join(email.cc'.values())) == "notreallyred@example.com,red@example.com")
 
     let headers: Array[String] = email.render_headers().split_by("\r\n")
     h.assert_eq[USize](headers.size(), 8)
