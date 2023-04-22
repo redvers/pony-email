@@ -32,8 +32,8 @@ jobs:
         with:
           entrypoint: update-version-in-VERSION
         env:
-          GIT_USER_NAME: "Ponylang Main Bot"
-          GIT_USER_EMAIL: "ponylang.main@gmail.com"
+          GIT_USER_NAME: "redvers"
+          GIT_USER_EMAIL: "red@infect.me"
       - name: Update version in README
         uses: ponylang/release-bot-action@0.6.1
         with:
