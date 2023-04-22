@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ### Added
 
+- Updating linter ([PR #16](https://github.com/redvers/pony-email/pull/16))
 
 ### Changed
 
