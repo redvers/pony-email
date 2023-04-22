@@ -21,4 +21,4 @@ jobs:
           git_user_name: "redvers"
           git_user_email: "red@infect.me"
         env:
-          API_CREDENTIALS: ${{ secrets.RELEASE_TOKEN }}
+          API_CREDENTIALS: ${{ secrets.GITHUB_TOKEN }}
