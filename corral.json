@@ -9,7 +9,7 @@
     "homepage": "https://github.com/redvers/pony-email/",
     "license": "BSD-2-Clause",
     "documentation_url": "https://redvers.github.io/pony-email",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "email"
   }
 }
