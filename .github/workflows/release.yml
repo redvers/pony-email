@@ -39,20 +39,15 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - pre-artefact-creation
-    container:
-      image: ghcr.io/ponylang/library-documentation-action-v2:release
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: "main"
-          token: ${{ secrets.RELEASE_TOKEN }}
       - name: Generate documentation
-        run: /entrypoint.py
-        env:
-          INPUT_SITE_URL: "https://redvers.github.io/pony-email/"
-          INPUT_LIBRARY_NAME: "email"
-          INPUT_DOCS_BUILD_DIR: "build/email-docs"
+        uses: docker://ponylang/library-documentation-action-v2:release
+        with:
+          site_url: "https://redvers.github.io/pony-email/"
+          library_name: "email"
+          docs_build_dir: "build/email-docs"
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
