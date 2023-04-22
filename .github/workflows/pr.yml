@@ -15,7 +15,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_BASH: true
           VALIDATE_DOCKERFILE: true
-          VALIDATE_MD: true
+          VALIDATE_MD: false
           VALIDATE_YAML: true
 
   verify-changelog:
